@@ -1,11 +1,10 @@
 {
-	"name": "access-api",
+	"name": "magazin-server",
 	"version": "1.0.0",
 	"type": "module",
 	"scripts": {
-		"start": "node index.js",
-		"dev": "nodemon index.js",
-		"vercel-build": "echo 'Building for Vercel'"
+		"start": "node src/index.js",
+		"dev": "nodemon src/index.js"
 	},
 	"dependencies": {
 		"express": "^4.18.2",
