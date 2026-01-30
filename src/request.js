@@ -1,5 +1,5 @@
 import express from 'express'
-import { mockProducts } from './mock/products.js'
+import mockProducts from './mock/products.js'
 const router = express.Router()
 
 // ХРАНЕНИЕ ДАННЫХ В ПАМЯТИ ДЛЯ VERCEL
