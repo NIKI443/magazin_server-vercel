@@ -28,7 +28,7 @@ router.get('/products', async (req, res) => {
 // Получить корзину пользователя
 router.get('/cart/:userId', async (req, res) => {
 	try {
-		const userId = parseInt(req.params.userId)
+		const userId = req.params.userId
 
 		// Находим товары в корзине пользователя
 		const userCartItems = cartItems.filter(item => item.ID_корзины === userId)
@@ -67,7 +67,7 @@ router.post('/product', async (req, res) => {
 		}
 
 		// Проверяем существует ли товар
-		const product = mockProducts.find(p => p.ID_товара === parseInt(ID_товара))
+		const product = mockProducts.find(p => p.ID_товара === ID_товара)
 		if (!product) {
 			return res.status(404).json({
 				success: false,
@@ -78,9 +78,9 @@ router.post('/product', async (req, res) => {
 		// Создаем новую запись
 		const newCartItem = {
 			ID_товара_корзины: Date.now(), // Временный ID
-			ID_корзины: parseInt(ID_корзины),
-			ID_товара: parseInt(ID_товара),
-			Количество: parseInt(Количество),
+			ID_корзины: ID_корзины,
+			ID_товара: ID_товара,
+			Количество: Количество,
 		}
 
 		// Добавляем в массив

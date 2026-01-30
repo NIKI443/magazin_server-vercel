@@ -1,13 +1,14 @@
 import express from 'express'
 import { mockCarts, mockUsers } from './mock/users.js'
 const router = express.Router()
-
+// console.log(mockUsers)
 router.post('/login', async (req, res) => {
 	try {
 		const { email, password } = req.body
-
+		console.log(req.body)
 		const user = mockUsers.find(u => u.Почта === email && u.Пароль === password)
-
+		console.log(user)
+		console.log(mockUsers)
 		if (!user) {
 			return res.status(401).json({
 				success: false,
