@@ -36,7 +36,12 @@ const port = process.env.PORT || 3000
 
 // Middleware
 app.use(express.json())
-app.use(cors())
+app.use(
+	cors({
+		origin: [process.env.CORS_ORIGIN_SITE, 'http://localhost:5173'],
+		credentials: true,
+	}),
+)
 
 // Routes
 app.use('/auth', auth)
